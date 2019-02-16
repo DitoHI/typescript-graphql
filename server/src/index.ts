@@ -12,7 +12,7 @@ const startServer = async () => {
         // These will be defined for both new or existing servers
         typeDefs,
         resolvers,
-        context: ({ req }: any) => ({ req })
+        context: ({req}: any) => ({req})
     });
 
     await createConnection();
@@ -27,7 +27,12 @@ const startServer = async () => {
         })
     );
 
-    server.applyMiddleware({app}); // app is from an existing express app
+    server.applyMiddleware({
+        app, cors: {
+            credentials: true,
+            origin: 'http://localhost:3000'
+        }
+    }); // app is from an existing express app
 
     app.listen({port: 4000}, () =>
         console.log(`🚀Check out the server at http://localhost:4000${server.graphqlPath}`)
