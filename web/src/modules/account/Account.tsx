@@ -1,9 +1,10 @@
 import * as React from 'react';
 import {Query} from "react-apollo";
-import {MeQuery} from "../../schemaTypes";
 import {Redirect} from "react-router-dom";
 import {SubscribeUser} from "./SubscribeUser";
+import {ChangeCreditCard} from "./ChangeCreditCard";
 import {meQuery} from "../../graphql/queries/me";
+import {MeQuery} from "../../schemaTypes";
 
 export class Account extends React.PureComponent {
     render() {
@@ -27,7 +28,10 @@ export class Account extends React.PureComponent {
                     }
 
                     // if (data.me.type === 'paid')
-                    return <Redirect to="/paid-users" />;
+                    return <div>
+                        <div>Your current last 4 digits: {data.me.ccLast4}</div>
+                        <ChangeCreditCard />
+                    </div>;
                 }}
             </Query>
         );
