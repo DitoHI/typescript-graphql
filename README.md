@@ -98,5 +98,28 @@ and revised the scripts inside `package.json`
    "lib" : ["es6", "dom", "esnext.asynciterable"]
 }
 ```
+*  Add rules to `tslint.json` <br />
+```json
+"rules" : {
+   "no-console": false,
+    "member-access": false,
+    "object-literal-sort-keys": false,
+    "ordered-imports": false,
+    "interface-name": false,
+    "no-submodule-imports": false,
+    "jsx-no-lambda": false
+}
+```
+* Add new value in scripts on `package.json` to generate mutation and query variables automatically <br />
+```json
+"scripts" : {
+   ....
+   "schema:download": "apollo schema:download --endpoint=http://localhost:4000/graphql",
+   "codegen:generate": "apollo codegen:generate --queries=./src/**/*.tsx --localSchemaFile=./schema.json --tagName=gql --addTypename --globalTypesFile=src/types/graphql-global-types.ts --outputFlat --target=typescript ./src/schemaTypes.ts",
+   "gen:types": "npm run schema:download && npm run codegen:generate"
+}
+```
+* Run gen:types to use mutation of React
+`yarn gen:types`
 
 
