@@ -119,7 +119,7 @@ and revised the scripts inside `package.json`
    "gen:types": "npm run schema:download && npm run codegen:generate"
 }
 ```
-* Run gen:types to use mutation of React
+* Run gen:types to use mutation of React <br />
 `yarn gen:types`
 
 
