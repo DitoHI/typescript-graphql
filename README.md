@@ -1,13 +1,15 @@
 ### Check out the link to learn the full tutorial
 (https://www.youtube.com/playlist?list=PLN3n1USn4xllF5t1GZhEwFQNDnStgupdB)
 
-### Prerequisite
+### Prerequisites
 
-##### Server
+#### Server
 * Install typeorm <br />
 `npm install typeorm -g`
 * Create typeorm project <br />
 `typeorm init --name server --database postgres`
+* Install yarn *(optional or you just can use npm)* <br />
+`yarn`
 * Upgrade latest typescript with yarn in terminal <br />
 `yarn upgrade-interactive --latest`
 * Revised `tsconfig.json` in root folder <br />
@@ -82,6 +84,20 @@ and revised the scripts inside `package.json`
       "start": "nodemon --exec ts-node src/index.ts"
    }
 ```
-
+<br />
+<br />
+#### Web
+* Create template of React and Typescript from Microsoft <br />
+`create-react-app my-app --scripts-version=react-scripts-ts`
+* Install Apollo and its dependencies <br />
+`yarn add react-router-dom apollo-boost graphql react-apollo`
+* Install dev dependencies with `typescript` compiler <br />
+`yarn add -D @types/react-router-dom apollo @types/graphql`
+* Revise `tsconfig.json` to add asynciterable to make yarn starts successfully <br />
+```json
+{
+   "lib" : ["es6", "dom", "esnext.asynciterable"]
+}
+```
 
 
