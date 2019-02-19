@@ -113,7 +113,7 @@ and revised the scripts inside `package.json`
 * Add new value in scripts on `package.json` to generate mutation and query variables automatically <br />
 ```json
 "scripts" : {
-   ...
+   ..
    "schema:download": "apollo schema:download --endpoint=http://localhost:4000/graphql",
    "codegen:generate": "apollo codegen:generate --queries=./src/**/*.tsx --localSchemaFile=./schema.json --tagName=gql --addTypename --globalTypesFile=src/types/graphql-global-types.ts --outputFlat --target=typescript ./src/schemaTypes.ts",
    "gen:types": "npm run schema:download && npm run codegen:generate"
