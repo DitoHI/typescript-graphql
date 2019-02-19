@@ -84,8 +84,7 @@ and revised the scripts inside `package.json`
       "start": "nodemon --exec ts-node src/index.ts"
    }
 ```
-<br />
-<br />
+
 #### Web
 * Create template of React and Typescript from Microsoft <br />
 `create-react-app my-app --scripts-version=react-scripts-ts`
